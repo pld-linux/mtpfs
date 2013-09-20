@@ -1,9 +1,9 @@
 Summary:	MTPfs is a FUSE filesystem that supports reading and writing from any MTP device
 Name:		mtpfs
 Version:	1.1
-Release:	0.1
+Release:	1
 License:	GPL v3
-Group:		Applications
+Group:		Applications/System
 Source0:	http://www.adebenham.com/files/mtp/%{name}-%{version}.tar.gz
 # Source0-md5:	a299cadca336e6945b7275b44c6e8d27
 URL:		http://www.adebenham.com/mtpfs/
