@@ -1,22 +1,30 @@
-Summary:	MTPfs is a FUSE filesystem that supports reading and writing from any MTP device
+Summary:	MTPfs - FUSE filesystem that supports reading and writing from any MTP device
+Summary(pl.UTF-8):	MTPfs - system plików FUSE obsługujący odczyt i zapis na urządzenia MTP
 Name:		mtpfs
 Version:	1.1
 Release:	1
 License:	GPL v3
 Group:		Applications/System
-Source0:	http://www.adebenham.com/files/mtp/%{name}-%{version}.tar.gz
+Source0:	https://www.adebenham.com/files/mtp/%{name}-%{version}.tar.gz
 # Source0-md5:	a299cadca336e6945b7275b44c6e8d27
-URL:		http://www.adebenham.com/mtpfs/
+URL:		https://www.adebenham.com/mtpfs/
+BuildRequires:	glib2-devel >= 1:2.30
+BuildRequires:	libfuse-devel >= 2.2
+BuildRequires:	libid3tag-devel >= 0.15
+BuildRequires:	libmad-devel >= 0.15
+BuildRequires:	libmtp-devel >= 1.1.2
 BuildRequires:	pkgconfig
-BuildRequires:	libfuse-devel
-BuildRequires:	libmtp-devel
-BuildRequires:	glib2-devel
-BuildRequires:	libmad-devel
+Requires:	glib2 >= 1:2.30
+Requires:	libfuse-tools >= 2.2
+Requires:	libid3tag >= 0.15
+Requires:	libmad >= 0.15
+Requires:	libmtp >= 1.1.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 MTPfs is a FUSE filesystem that supports reading and writing from any
 MTP device (as supported by libmtp).
+
 Currently implemented:
 - Support multiple storage areas
 - Browsing Folders
@@ -25,6 +33,19 @@ Currently implemented:
 - Browsing playlists
 - Writing playlists
 - Writing music tracks with metadata
+
+%description -l pl.UTF-8
+MTPfs to system plików FUSE obsługujący odczyt i zapis na dowolne
+urządzenia MTP (obsługiwane przez libmtp).
+
+Obecnie zaimplementowane:
+- przeglądanie wielu obszarów przechowywania danych
+- przeglądanie folderów
+- odczyt plików
+- zapis plików
+- przeglądanie list odtwarzania
+- zapis list odtwarzania
+- zapis ścieżek muzycznych z metadanymi
 
 %prep
 %setup -q
